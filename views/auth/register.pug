@@ -1,0 +1,29 @@
+extends ../layout.pug
+append header
+ hr
+ h1 Register 
+ hr
+block content
+ #register
+  form(method="POST",action="/register")
+   .form-group
+    label(for="username") Username
+    input(type="text",name="username" class="form-control")
+   .form-group 
+    label(for="password") Password
+    input(type="password",name="password" class="form-control")
+   .form-group
+    label(for="confirmPassword") Confirm Password
+    input(type="password" name="confirmPassword" class="form-control")
+    .form-group 
+    button(type="submit" value="register" class="btn btn-primary") Register
+    a(href="/login") Have an account? Login
+
+
+
+
+
+
+
+
+

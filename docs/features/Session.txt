@@ -1,0 +1,68 @@
+Feature : Maintaining registered/logged In session after user 
+	  refreshes the page
+
+
+Client - We need to find a way to save a session id after registration
+       - Should always send the session id on object sent to the server
+       - Should load chat.UI if there is a session
+
+	window.sessionStorage.setItem(key,value); // key=sid, value= encrypted string coming from the server expires when tab is closed
+	window.sessionStorage.getItem(key);
+
+	window.localStorage = shared between tabs
+
+Server - We need to find a way to save a session id after registration
+
+       - session id persists even on sockets 'disconnect' event
+       - session id should only be deleted once the client
+         sends a logout event
+       - server sends a session-destroy event
+
+
+
+
+How do we do this.
+	A. Upon reload or site visit always retrieve session storage first
+		window.sessionStorage.getItem("cflysid"");
+	1. session object is made by the server after successful registration
+	2. session object is sent to the browser as pay load to the response object
+		session object is a JSON object
+		response.data.session = sessionObject
+		session object contains
+			session.id = a unique text encrypted associated with a User ( Peer.handle )
+			       .data = {"handle" : "of the user"} / no password of course ung session id na pinaka password
+	3. code on the client will parse the session data and save it to session storage(if remember me flag is not set-this will be later feature???)
+	4. session object is always attached on every request object
+    
+    
+    
+    each event emits transaction
+    
+    
+    Transaction types 
+        registration
+        new-message
+        logout
+        
+        
+    Register
+    Message
+    Logout
+    
+    
+    inherits Transaction
+    
+    new Registration("handle");
+        .login();
+        .logout();
+        
+    new Message("message");
+    
+        
+    
+    Transaction is a prototype
+        - session 
+        - identity
+        .register = "register"
+        .newMessage = "new-message"
+        .

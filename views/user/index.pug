@@ -1,0 +1,8 @@
+extends ../layout.pug
+append content
+ h1 Hello #{name}
+ a(href="/logout")
+ include ../partials/chat.pug
+append styles
+  link(href="/css/cfly.css" rel="stylesheet")
+ 

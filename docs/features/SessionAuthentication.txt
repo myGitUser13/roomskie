@@ -1,0 +1,12 @@
+client : on load, check the registry for session
+client : save it
+client : if session is present send a session authentication request using the session
+server : process the session authentication request
+server : if session is not valid, send an session authentication failure response
+         reject any session authentication request, set session to null 
+         from the socket unless it successfuly authenticates/registers(anonymous registration) first
+         send a session update message to the client
+client : process the session update message,update the sessionStorage even if it is null
+         
+         
+

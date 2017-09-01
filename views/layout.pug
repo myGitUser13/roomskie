@@ -1,0 +1,20 @@
+doctype
+html
+ head
+  meta(name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no")
+  title #{title}
+  script(src="/socket.io/socket.io.js")
+  script(src="/assets/lib/jquery/js/jquery.min.js")
+  script(src="/assets/lib/popperjs/js/popper.min.js")
+  script(src="/assets/lib/bootstrap/js/bootstrap.min.js")  
+  script(src="/assets/js/client.js")
+  link(href="/assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet")
+ body
+  .container  
+    block header
+      include partials/header.pug    
+      h1 #hashtag
+    .container
+      block content
+      block footer
+      block styles

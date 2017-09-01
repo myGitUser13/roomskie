@@ -1,0 +1,4 @@
+Next Feature 
+	Online Presence
+	Delete Peer from registry upon disconnect
+	Private Message

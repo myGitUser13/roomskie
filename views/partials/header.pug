@@ -1,0 +1,8 @@
+if !user
+ if !authURL
+  a.button(href="/register") Register |
+  a.button(href="/login") Login
+ endif 
+else
+ a.button(href="/logout") Logout
+endif

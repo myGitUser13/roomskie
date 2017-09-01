@@ -1,0 +1,24 @@
+Feature : Private Message
+	 Typing @name[space]Message..... on the message box means the message is intended to a single recpient named 'name'
+
+Use Case: 
+	User types: @name message
+	Sends the message to the name
+	
+
+Frontend : typing @ in the message-box will show an info message at the top of the message-box
+	  info message = Please enter name of recipient after @ e.g. @John to send the message privately to John.
+	 :removing @ will hide the message-compose-info
+	 : @john[space] will send non-intrusive query to server to check if john is online makes the name green if online otherwise red		 				
+	 Private messages will also be displayed on the message-histoy logs but with a particular icon identifying it as private message from
+  	 
+	 
+Backend: Treat message as the same message, Send it to the user with @name handle privately
+
+	Requirement : The @name receipient must be online
+
+
+??? feature : Allow offline messages 
+??? feature : Separate container for private messages
+		   
+

@@ -1,0 +1,9 @@
+Feature : Presence
+	: When a user visits the site and successfully registers, a new "presence" broadcast is emitted
+
+
+
+
+
+
+

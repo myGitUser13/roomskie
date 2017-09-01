@@ -1,0 +1,42 @@
+-User Visits Site
+1. load session from storage and save it -- done
+
+2. initialize event listeners
+
+	events = {
+		REGISTER : 112,
+	}
+
+	
+	listeners = [];
+
+	registrationListener = {
+		eventType : events.REGISTER,
+		execute : function(eventObject){
+		//check the eventObject status,
+		//if success 200 ,do successful operation
+		//if -1 do error operation
+	}};
+
+	listeners.push(registrationListener);
+	
+
+	socket.on('message',function(eventObject){
+		//get the eventObject code
+		eventObjectType = eventObject.type;
+		//find the handler of this type of event from the listeners array
+		
+		handler = listeners.find(function(listener){
+			return listener.eventType === eventObjectType;
+		})
+
+		//execute the handler pass it the eventObject that was recieved
+		handler.execute(eventObject);
+	});
+
+2. listen for the init event that the server will fire, server will send the config object for the client
+	
+
+3. send a registration transaction if the session is not NULL
+	- If registration was successful load the chat ui
+	- If registration was UNsuccessful load the registration ui

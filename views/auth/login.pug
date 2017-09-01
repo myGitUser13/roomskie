@@ -1,0 +1,21 @@
+extends ../layout.pug
+append header
+ hr
+ h1 Login 
+ hr
+append content
+ #login
+  if error
+   #error #{error}
+  form(method="POST",action="/login")
+   .form-group
+    label(for="username") Username
+    input(type="text" name="username" class="form-control")
+   .form-group 
+    label(for="password") Password
+    input(type="password" name="password" class="form-control")
+   .form-group 
+    button(type="submit" value="login" class="btn btn-primary") Login
+    a(href="/register")  or Register for free!
+
+
